@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/getirAnasayfaFragment">
+
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.nurgundogdu.recyclerviewkullanimi.AnasayfaFragment"
+        android:label="AnasayfaFragment"
+        tools:layout="@layout/fragment_anasayfa">
+        <action
+            android:id="@+id/detayaGecis"
+            app:destination="@id/detaySayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detaySayfaFragment"
+        android:name="com.nurgundogdu.recyclerviewkullanimi.DetaySayfaFragment"
+        android:label="DetaySayfaFragment"
+        tools:layout="@layout/fragment_detay_sayfa">
+        <argument
+            android:name="nesne"
+            app:argType="com.nurgundogdu.recyclerviewkullanimi.Kisiler" />
+    </fragment>
+    <fragment
+        android:id="@+id/getirAnasayfaFragment"
+        android:name="com.nurgundogdu.recyclerviewkullanimi.GetirAnasayfaFragment"
+        android:label="GetirAnasayfaFragment"
+        tools:layout="@layout/fragment_getir_anasayfa">
+        <action
+            android:id="@+id/kategoriGecis"
+            app:destination="@id/kategoriDetayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kategoriDetayFragment"
+        android:name="com.nurgundogdu.recyclerviewkullanimi.KategoriDetayFragment"
+        android:label="KategoriDetayFragment"
+        tools:layout="@layout/fragment_kategori_detay">
+        <argument
+            android:name="ket_nesne"
+            app:argType="com.nurgundogdu.recyclerviewkullanimi.Kategoriler" />
+    </fragment>
+</navigation>
